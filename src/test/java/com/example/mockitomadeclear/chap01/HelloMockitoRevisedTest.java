@@ -49,7 +49,7 @@ class HelloMockitoRevisedTest {
         // verify the methods are called once, in the right order
         InOrder inOrder = inOrder(personRepository, translationService);
         inOrder.verify(personRepository).findById(anyInt());
-        inOrder.verify(translationService).translate(anyString(), eq("en"), eq("en"));
+        inOrder.verify(translationService).translate(anyString(), eq("en"), eq("en")); // use eq when combining with ArgumentMatchers without raw "en"
     }
 
     @Test
