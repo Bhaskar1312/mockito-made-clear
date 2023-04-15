@@ -9,7 +9,7 @@ public class Person {
     private final String last;
     private final LocalDate dob;
 
-    Person(Integer id, String first, String last, LocalDate dob) {
+    public Person(Integer id, String first, String last, LocalDate dob) {
         this.id = id;
         this.first = first;
         this.last = last;
