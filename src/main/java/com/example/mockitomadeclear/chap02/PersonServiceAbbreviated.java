@@ -33,4 +33,15 @@ public class PersonServiceAbbreviated {
         repository.findAll()
             .forEach(repository::delete);
     }
+
+    public Integer getHighestId() {
+        return repository.findAll().stream().map(Person::getId).max(Integer::compareTo).orElse(0);
+    }
+
+    public List<Integer> savePeople(Person... person) {
+        return Arrays.stream(person)
+            .map(repository::save)
+            .map(Person::getId)
+            .collect(Collectors.toList());
+    }
 }

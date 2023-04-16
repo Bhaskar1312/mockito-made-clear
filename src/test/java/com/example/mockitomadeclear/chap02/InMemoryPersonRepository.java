@@ -26,7 +26,7 @@ public class InMemoryPersonRepository implements PersonRepository {
 
     @Override
     public List<Person> findAll() {
-        return null;
+        return people;
     }
 
     @Override
