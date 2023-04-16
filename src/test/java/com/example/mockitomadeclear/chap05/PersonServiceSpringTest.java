@@ -9,6 +9,7 @@ import java.time.Month;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
@@ -42,3 +43,10 @@ class PersonServiceSpringTest {
         verify(repository).findAll();
     }
 }
+
+// If you plan to use both JUnit 5 and JUnit 4 tests in the same project, be sure to include the vintage engine with your JUnit dependencies:
+
+// Junit4 - has 3 ways to tell to work with annotations
+// 1. @RunWith(MockitoJUnitRunner.class)
+// 2. @Rule public MockitoRule rule = MockitoJUnit.rule().strictness(Strictness.STRICT_STUBS); // strict -default for junit5 , lenient for junit-4
+// 3. 	@Before public void setUp() { MockitoAnnotations.openMocks(this); }
